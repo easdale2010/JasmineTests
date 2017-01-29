@@ -40,6 +40,20 @@ describe("Tests the Rect type", function(){
         r.overlaps(r,r2);
         expect(r.hit).toBe(true);
         expect(r2.hit).toBe(true);
+        r = new Rect(10, 10, 10, 15);
+        r2 = new Rect(21, 10, 2, 3);
+        r.overlaps(r,r2);
+        expect(r.hit).toBe(false);
+        expect(r2.hit).toBe(false);
+
+    });
+
+    it("Test wheater2 rectanlges are the same object", function(){
+        r = new Rect(20, 10, 10, 15);
+        r2 = new Rect(20, 10, 10, 15);
+        r.is(r,r2);
+        expect(r.same).toBe(false);
+        expect(r2.same).toBe(false);
 
     });
 });
