@@ -35,9 +35,11 @@ describe("Tests the Rect type", function(){
     });
 
     it("Test wheather a 2 rectanlges overlap", function(){
-        r = new Rect(2, 2, 4, 3);
-        r2 = new Rect(20, 50, 2, 3);
+        r = new Rect(20, 10, 10, 15);
+        r2 = new Rect(20, 10, 2, 3);
         r.overlaps(r,r2);
-        expect(r.contact).toBe(false);
+        expect(r.hit).toBe(true);
+        expect(r2.hit).toBe(true);
+
     });
 });
